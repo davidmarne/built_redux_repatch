@@ -7,7 +7,7 @@ import 'package:built_value/built_value.dart';
 part 'test_counter.g.dart';
 
 abstract class TestCounterActions extends ReduxActions {
-  ActionDispatcher<Repatch> repatchDispatcher;
+  ActionDispatcher<Repatch<TestCounter, TestCounterBuilder>> repatchDispatcher;
 
   TestCounterActions._();
   factory TestCounterActions() => new _$TestCounterActions();

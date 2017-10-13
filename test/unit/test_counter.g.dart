@@ -85,8 +85,10 @@ class TestCounterBuilder implements Builder<TestCounter, TestCounterBuilder> {
 // **************************************************************************
 
 class _$TestCounterActions extends TestCounterActions {
-  final ActionDispatcher<Repatch> repatchDispatcher =
-      new ActionDispatcher<Repatch>('TestCounterActions-repatchDispatcher');
+  final ActionDispatcher<Repatch<TestCounter, TestCounterBuilder>>
+      repatchDispatcher =
+      new ActionDispatcher<Repatch<TestCounter, TestCounterBuilder>>(
+          'TestCounterActions-repatchDispatcher');
   factory _$TestCounterActions() => new _$TestCounterActions._();
 
   _$TestCounterActions._() : super._();
@@ -98,6 +100,8 @@ class _$TestCounterActions extends TestCounterActions {
 }
 
 class TestCounterActionsNames {
-  static final ActionName<Repatch> repatchDispatcher =
-      new ActionName<Repatch>('TestCounterActions-repatchDispatcher');
+  static final ActionName<Repatch<TestCounter, TestCounterBuilder>>
+      repatchDispatcher =
+      new ActionName<Repatch<TestCounter, TestCounterBuilder>>(
+          'TestCounterActions-repatchDispatcher');
 }
