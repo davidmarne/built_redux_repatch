@@ -22,7 +22,7 @@ Pass repatchReducer to you store as the reducer
 
 ```dart
 var store = new Store<Counter, CounterBuilder, CounterActions>(
-  repatchReducer<Counter, CounterBuilder>,
+  createRepatchReducer<Counter, CounterBuilder>(),
   new Counter(),
   new CounterActions(),
 );
