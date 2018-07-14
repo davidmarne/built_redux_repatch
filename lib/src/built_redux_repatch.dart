@@ -6,6 +6,6 @@ typedef void Repatch<V extends Built<V, B>, B extends Builder<V, B>>(
 
 Reducer<V, B, Repatch<V, B>>
     createRepatchReducer<V extends Built<V, B>, B extends Builder<V, B>>() =>
-        (V state, Action<Repatch<V, B>> action, B builder) {
-          action.payload(state, builder);
+        (V state, Action<dynamic> action, B builder) {
+          if (action.payload is Repatch<V, B>) action.payload(state, builder);
         };

@@ -25,11 +25,9 @@ main() {
     test('async action updates state', () async {
       setup();
       store.actions.repatchDispatcher(
-          (TestCounter state, TestCounterBuilder builder) =>
-              builder.count += 4);
-      var stateChange = await store.stream.first;
-      expect(stateChange.prev.count, 1);
-      expect(stateChange.next.count, 5);
+        (TestCounter state, TestCounterBuilder builder) => builder.count += 4,
+      );
+      expect(store.state.count, 5);
     });
   });
 }

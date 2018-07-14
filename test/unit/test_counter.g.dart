@@ -3,10 +3,46 @@
 part of test_counter;
 
 // **************************************************************************
-// Generator: BuiltValueGenerator
+// BuiltReduxGenerator
 // **************************************************************************
 
+// ignore_for_file: avoid_classes_with_only_static_members
 // ignore_for_file: annotate_overrides
+
+class _$TestCounterActions extends TestCounterActions {
+  factory _$TestCounterActions() => new _$TestCounterActions._();
+  _$TestCounterActions._() : super._();
+
+  final ActionDispatcher<Repatch<TestCounter, TestCounterBuilder>>
+      repatchDispatcher =
+      new ActionDispatcher<Repatch<TestCounter, TestCounterBuilder>>(
+          'TestCounterActions-repatchDispatcher');
+
+  @override
+  void setDispatcher(Dispatcher dispatcher) {
+    repatchDispatcher.setDispatcher(dispatcher);
+  }
+}
+
+class TestCounterActionsNames {
+  static final ActionName<Repatch<TestCounter, TestCounterBuilder>>
+      repatchDispatcher =
+      new ActionName<Repatch<TestCounter, TestCounterBuilder>>(
+          'TestCounterActions-repatchDispatcher');
+}
+
+// **************************************************************************
+// BuiltValueGenerator
+// **************************************************************************
+
+// ignore_for_file: always_put_control_body_on_new_line
+// ignore_for_file: annotate_overrides
+// ignore_for_file: avoid_annotating_with_dynamic
+// ignore_for_file: avoid_returning_this
+// ignore_for_file: omit_local_variable_types
+// ignore_for_file: prefer_expression_function_bodies
+// ignore_for_file: sort_constructors_first
+
 class _$TestCounter extends TestCounter {
   @override
   final int count;
@@ -15,7 +51,8 @@ class _$TestCounter extends TestCounter {
       (new TestCounterBuilder()..update(updates)).build();
 
   _$TestCounter._({this.count}) : super._() {
-    if (count == null) throw new ArgumentError.notNull('count');
+    if (count == null)
+      throw new BuiltValueNullFieldError('TestCounter', 'count');
   }
 
   @override
@@ -78,30 +115,4 @@ class TestCounterBuilder implements Builder<TestCounter, TestCounterBuilder> {
     replace(_$result);
     return _$result;
   }
-}
-
-// **************************************************************************
-// Generator: BuiltReduxGenerator
-// **************************************************************************
-
-class _$TestCounterActions extends TestCounterActions {
-  final ActionDispatcher<Repatch<TestCounter, TestCounterBuilder>>
-      repatchDispatcher =
-      new ActionDispatcher<Repatch<TestCounter, TestCounterBuilder>>(
-          'TestCounterActions-repatchDispatcher');
-  factory _$TestCounterActions() => new _$TestCounterActions._();
-
-  _$TestCounterActions._() : super._();
-
-  @override
-  void setDispatcher(Dispatcher dispatcher) {
-    repatchDispatcher.setDispatcher(dispatcher);
-  }
-}
-
-class TestCounterActionsNames {
-  static final ActionName<Repatch<TestCounter, TestCounterBuilder>>
-      repatchDispatcher =
-      new ActionName<Repatch<TestCounter, TestCounterBuilder>>(
-          'TestCounterActions-repatchDispatcher');
 }
